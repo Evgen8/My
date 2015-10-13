@@ -1,0 +1,281 @@
+body {
+  background: url(http://cdn23.us1.fansshare.com/photos/background/tumblr-static-background-animated-walls-363961384.jpg);
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+#box {
+   height: 100%;
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto; 
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+/*текст под картинкой*/
+#p {
+  margin: 0px 135px 10px;
+  color: grey;
+  font-weight: 100;
+}
+
+nav {
+   background-color: rgba(0, 0, 0, 0.25);
+   height: 78px;
+}
+#h {
+  margin-left: -40px;
+}
+#menu li {
+   height: 100%;
+   font: 20px sans-serif ; 
+   display: inline-block;
+   position: relative; 
+   float: left;
+   border-right: 1px solid #dae0e5;    
+}
+#menu li a {
+  display: block;
+  padding: 0 12px;
+  line-height: 78px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 0 grey;
+       /*переход, анимация*/
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+#menu ul {
+  position: absolute;
+  top: 88px;
+  width: 130px;
+  text-align: center;
+  display: none;
+  padding: 0px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+#menu ul:before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 100%;
+  left: 53px;
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: rgba(256, 0, 0, 0.5) transparent;  
+}
+#menu ul li { 
+  display: block; 
+  width: 100%; 
+  font-size: 0.9em; 
+  text-shadow: 1px 1px 0 grey;
+  background: none;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  margin: auto;
+}
+#menu ul li a {
+  margin: auto;
+  display: block;
+  width: 90%;
+  padding: 6px 7px;
+  line-height: 1.4em;
+      /*переход, анимация*/
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+#menu li a:hover {
+  background-color: red;
+}
+
+
+
+
+            /*Центральный блок*/
+section {
+  width: 65%;
+  margin-left: 15%;
+  margin-right: 20%;
+}
+.title {
+  background: rgba(256, 256, 256, 0.4);
+  border: 1px solid silver;
+  padding: 6px;
+  font-size: 20px;
+  text-align: center;
+  color: grey;
+  
+}
+.blogpost {
+  height: 120px;
+  border-bottom: 1px dashed silver;
+}
+.blockleft {
+  float: left;
+  height: 110px;
+  width: 70%;
+  margin: 5px;
+  padding: 0px 5px;
+}
+.blockright {
+  float: right;
+  height: 110px;
+  width: 25%; 
+  margin: 5px;
+}
+.Big {
+  width: 95%;
+  margin: auto;
+  font-size: 13px;
+}
+.Big a {
+  color: red;
+}
+.Big h3 a {
+  color: #282828;
+}
+.Big div h3 {
+  font-family: franklin-gothic-urw, Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin: 0px;
+}
+.number ul {
+  text-align: center;
+}
+.number ul li {
+  display: inline-block;
+  font:900 18px italic;
+  background: rgba(255, 255, 255, 0.1);
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  border: 1px solid silver;
+}
+.number ul li a {
+  display: block;
+}
+.number ul li a:hover {
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  box-shadow: 0px 0px 5px #cc0000;
+}
+.under {
+  width: 95%;
+  margin: auto;
+}
+
+          /*Левая панель меню*/
+aside {
+  height: 1000px;
+  width: 15%;
+  margin-top: 18px;
+  float: left;
+  font-size: 14px; 
+}
+aside h3 {
+  background: silver;
+}
+.sideblock, .sideblock1{
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid grey;
+}
+.sideblock{
+  margin-top: 15px;
+}
+.ul {
+  padding: 0px;
+  font-size: 15px;
+  margin: 0px;
+}
+.ul li a { 
+  display: block; 
+  width: 90%;
+  margin-left: 10px;
+  line-height: 25px;
+  color: #404040;
+}
+.ul li:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.columnh3 {
+  height: 30px;
+  background: #90909F;
+  font: bold 15px sans-serif;
+  color: white;
+  text-align: center;
+  margin: 0;
+  display: block;
+  line-height: 30px;
+}
+
+
+            /*Правая панель меню*/
+.about {
+  border: 1px solid black;
+  padding: 5px;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.about img {
+  height: 70px;
+}
+.about p {
+  margin: 0px;
+}            
+.right-column {
+  height: 1000px;
+  width: 20%;
+  margin-top: 18px;
+  float: right;
+}
+
+                /*Другое*/
+.other h4 {
+  color: #262626; 
+  margin-bottom: 0px;
+}
+.other p {
+  color: red;
+  font-size: 12px;
+  margin: 0px;
+}
+.other a {
+  font-size: 12px;
+  margin: 0px;
+}
+#otherLeft {
+  width: 290px;
+  float: left;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+#otherRight {
+  width: 290px;
+  float: right;
+  padding: 5px;
+}
+.other ul {
+  padding: 0px;
+}
+#copyright {
+  text-align: center;
+  color: grey;
+}
+footer {
+  border-top: 1px solid #CFCFCF;
+  clear: both;
+  display: block;
+}
+#copyright a:hover {
+  text-decoration: underline;
+}
