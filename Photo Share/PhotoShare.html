@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Photo Share</title>
+  
+    <link href="PhotoShare.css" rel="stylesheet" type="text/css" />
+                      <!--Шрифты-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet' type='text/css'>
+                      <!--Bootstrap-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+                    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+                <!--Навигация-->
+  <div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#responsive-menu">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>              
+        </button>
+        <a class="navbar-brand" href="#">Photo Share</a>
+      </div>
+      <div class="collapse navbar-collapse" id="responsive-menu">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Авто</a></li>
+          <li><a href="#">Природа</a></li>
+          <li><a href="#">Люди</a></li>
+          <li><a href="#">Технологии</a></li>
+          <li><a href="#">Животные</a></li>
+          <li><a href="#">Города</a></li>
+          <li><a href="#">Работа</a></li> 
+        </ul>
+        <form action="" class="navbar-form navbar-right">
+          <div class="input-group">
+            <input class="form-control" type="text">
+            <span class="input-group-btn">
+            <button class="btn  btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button></span>
+          </div>
+        </form>
+        <form action="" class="navbar-form navbar-right">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="E-mail" value="">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Пароль" value="">
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="glyphicon glyphicon-log-in"></i> Войти
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="carousel" class="carousel slide hidden-xs">
+              <!--Индикаторы слайдов-->
+    <ol class="carousel-indicators">
+        <li class="active" data-target="#carousel" data-slide-to="0"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+        <li data-target="#carousel" data-slide-to="3"></li>
+        <li data-target="#carousel" data-slide-to="4"></li>
+    </ol>
+                        <!--Слайды-->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="slider-image/1437566789666_4_ma-THA_164_1_236968_XL.jpg" alt="" > 
+        </div>
+        <div class="item">
+            <img src="slider-image/wallpaper-2367221-1440x500.jpg" alt="" >
+        </div>
+        <div class="item">
+            <img src="slider-image/newyork.jpg" alt="" >
+        </div>
+        <div class="item">
+            <img src="slider-image/alpha-slider-image-1-1440x500.jpg" alt="" >
+        </div>
+        <div class="item">
+            <img src="slider-image/1437559472399_image001.jpg" alt="" >
+        </div>
+    </div>
+                <!--Стрелки переключения слайдов-->
+    <a href="#carousel" class="left carousel-control" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a href="#carousel" class="right carousel-control" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+  <div class="visible-xs">
+    <img src="image/article_0193_5.jpg" alt="" class="img-responsive">
+  </div>
+  
+  
+  
+                  <!--Блок фотографий-->
+    
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+             <a class="image" rel="group" href="image/denver.jpeg"><img src="image/denver.jpeg"/></a> 
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+             <a class="image" rel="group" href="image/amazing pictures of nature (97).jpg"><img src="image/amazing pictures of nature (97).jpg"/></a> 
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+             <a class="image" rel="group" href="image/Italy-City-View-By-Day-480x300.jpg"><img src="image/Italy-City-View-By-Day-480x300.jpg"/></a> 
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+             <a class="image" rel="group" href="image/beautiful_nature_wallpapers_47.jpg"><img src="image/beautiful_nature_wallpapers_47.jpg"/></a> 
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+             <a class="image" rel="group" href="image/be-yourself.jpg"><img src="image/be-yourself.jpg"/></a> 
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+             <a class="image" rel="group" href="image/city.jpg"><img src="image/city.jpg"/></a> 
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+             <a class="image" rel="group" href="image/nature chakra.jpg"><img src="image/nature chakra.jpg"/></a> 
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+             <a class="image" rel="group" href="image/singapore-tour-packages-2015.jpg"><img src="image/singapore-tour-packages-2015.jpg"/></a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+             <a class="image" rel="group" href="image/wpid.jpg"><img src="image/wpid.jpg"/></a> 
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+             <a class="image" rel="group" href="image/lion.jpg"><img src="image/lion.jpg"/></a> 
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+             <a class="image" rel="group" href="image/landscape.jpg"><img src="image/landscape.jpg"/></a> 
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+             <a class="image" rel="group" href="image/london.jpg"><img src="image/london.jpg"/></a> 
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+             <a class="image" rel="group" href="image/Pink-Flower-Wallpaper-Image.jpg"><img src="image/Pink-Flower-Wallpaper-Image.jpg"/></a> 
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+             <a class="image" rel="group" href="image/RockCit_Leap_rev01.jpg"><img src="image/RockCit_Leap_rev01.jpg"/></a> 
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+             <a class="image" rel="group" href="image/Seeds.jpg"><img src="image/Seeds.jpg"/></a> 
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+             <a class="image" rel="group" href="image/bostonwaterfront.jpg"><img src="image/bostonwaterfront.jpg"/></a> 
+          </div>
+        </div>
+        
+      </div>
+  </div>
+  
+              <!--Подвал-->
+              
+  <footer>
+  <div class="container-fluid">
+      <div class="row">
+        
+        <div class="col-xs-12 col-sm-4">
+          <div class="row">
+            <div class="col-xs-6 col-sm-6">
+              <ul>
+                <li><a href="#">Авто</a></li>
+                <li><a href="#">Природа</a></li>
+                <li><a href="#">Люди</a></li>
+                <li><a href="#">Технологии</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-6 col-sm-6">
+              <ul>
+                <li><a href="#">Животные</a></li>
+                <li><a href="#">Города</a></li>
+                <li><a href="#">Работа</a></li> 
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-8">
+          <div class="row text-center">
+            <div class="col-xs-12 col-sm-6">
+              <h3>Photo Share</h3>
+              <p>&copy; 2015</p>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <button class="btn  btn-default" type="button"><a href="mailto:evgeniy.jugalskiy@gmail.com">Связаться</a></button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+  </div>
+  </footer>
+                          <!--Fancybox-->
+    <script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="fancybox/fancybox1.js"></script>
+	<script type="text/javascript" src="fancybox/jquery.fancybox.js?v=2.1.5"></script>
+    <link rel="stylesheet" href="fancybox/jquery.fancybox.css" type="text/css" media="screen" /> 
+    <script type="text/javascript"> 
+      $(document).ready(function() { 
+        $("a.image").fancybox(); 
+      }); 
+    </script>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+</body>
+</html>
