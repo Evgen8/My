@@ -1,8 +1,4 @@
 <?php
-    define( "DB_DSN", "mysql:host=localhost;dbname=tblog; charset=utf8" );
-	define( "DB_USERNAME", "root" );
-	define( "DB_PASSWORD", "2012" );
-    
     if(isset($_POST['send'])) {
         if(isset($_POST['name']) && !empty($_POST['name'])) {
             $name = trim(strip_tags($_POST['name']));
@@ -30,9 +26,6 @@
         $st->bindValue(':password', $password);
         $st->bindValue(':date', $date);
         $st->execute();
-        echo '<br>'.$write;
-        echo '<p>Было затронуто строк :'. $st->rowCount() .'</p>';
-        echo '<p>Последняя строка :'. $conn->lastInsertId() .'</p>';
     }
 	
 	if(isset($_POST['send'])) {
