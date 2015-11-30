@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tech Blog</title>
+    <meta charset="utf-8">
+	<link type="text/css" rel="stylesheet" href="TechBlog.css"/>
+	<link type="text/css" rel="stylesheet" href="Article.css"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="up.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Техно<span>Blog</span></h1>
+      <form id="search"> 
+        <input type="search" name="search">
+        <input type="button" name="sick" value="Поиск">
+      </form>
+      <ul>
+        <li><a href="#">Новости</a></li>
+        <li><a href="#">Обзоры</a></li>
+        <li><a href="#">Статьи</a></li>
+        <li><a href="#">Гаджеты</a></li>
+        <li><a href="#">Софт</a></li>
+        <li><a href="#">Игры</a></li>
+      </ul>
+	  
+      <form id="entry">
+        <input id="loginBtn" type="button" name="log-in" value="Войти"  onclick="javascript:showElement('log-in')">
+        <input id="registrationBtn" type="button" name="registration" value="Регистрация" onclick="javascript:showElement('Sign-up')">
+        
+        <div id="log-in" style="display:none;">
+          <input autofocus type="text" name="name" placeholder="Логин">
+          <input type="password" name="password" placeholder="Пароль">
+          <label><input type="checkbox" name="remember"> Запомнить меня</label>
+          
+          <input type="submit" name="log-in" value="Войти"><br>
+          <a id="aForgot" href="#">Забыли пароль?</a>
+        </div>
+        
+        <div id="Sign-up" style="display:none;">
+          <input autofocus type="text" name="name" placeholder="Имя">
+          <input type="text" name="name" placeholder="Фамилия">
+          <input type="text" name="name" placeholder="e-mail">
+          <input type="text" name="name" placeholder="Возраст">
+          <input type="password" name="name" placeholder="Пароль">
+          <input type="password" name="name" placeholder="Повторите пароль">
+          <input type="submit" name="log-in" value="Готово">
+        </div>
+        
+     </form>
+    </header>
+    <div class="center">
+      <div class="title">
+        <input id="back" type="button" onclick="history.back()" value="&larr; Вернуться">
+        <h2>3 новые функции Google Maps, о которых следует знать</h2>
+      </div>
+      
+       <section>
+        <p>Google Maps является на сегодняшний день одной из самых удобных и функциональных картографических систем. При этом разработчики не устают добавлять в этот сервис и соответствующие мобильные приложения всё новые и новые возможности. О самых свежих из них вы узнаете из этой статьи.</p>
+        <a href="../image/Screen-12_1437991302-630x314.png"><img src="../image/Screen-12_1437991302-630x314.png"></a>
+        <p>1. Отправка координат точки из Google Maps на смартфон
+Очень часто мы используем для поиска какого-либо места онлайновую версию Google Maps на компьютере или ноутбуке, а затем хотим сохранить результаты на мобильном устройстве для последующего использования. Теперь передать координаты любой точки из веб-версии Google Maps на смартфон можно нажатием всего одной кнопки.</p>
+        <a href="../image/Screen-11_1437988485-630x428.png"><img src="../image/Screen-11_1437988485-630x428.png"></a>
+		<p>Достаточно просто поставить метку на карте, после чего в появившейся слева панели нажать на ссылку «Отправить на мобильное устройство». После этого на смартфон придёт всплывающее уведомление с названием места. Тап по этому уведомлению откроет мобильную версию Google Maps с нужной меткой.</p>
+		<p>2. Просмотр истории своих перемещений
+Ни для кого не секрет, что компания Google собирает сведения о каждом нашем шаге. Делает она это, разумеется, только для нашего же блага и для предоставления ещё более качественных услуг. Интересный пример такой функции появился недавно в мобильной версии Google Maps и называется «Хронология». Вы сможете найти этот пункт в меню на левой панели.</p>
+        <a href="../image/Screenshot_2015-07-27-12-21-55_1437990740-310x551.png"><img src="../image/Screenshot_2015-07-27-12-21-55_1437990740-310x551.png"></a>
+		<a href="../image/Screenshot_2015-07-27-12-22-33_1437990788-310x551.png"><img src="../image/Screenshot_2015-07-27-12-22-33_1437990788-310x551.png"></a>
+		<p>Здесь представлена история ваших перемещений и местоположения по датам. Интересно, что инструмент «Хронология» отображает не только маршруты, но и способ передвижения, сделанные фотографии и другие сведения.</p>
+		<p>3. Свои названия на карте
+Свежая версия Google Maps для Android содержит ещё одно малозаметное, но удобное нововведение. Теперь вы можете дать любой точке на карте своё собственное название. Особенно эта функция пригодится путешественникам, которым трудно запомнить адреса гостиниц, музеев и других интересных мест на иностранном языке.</p>
+		<a href="../image/Screenshot_2015-07-27-12-27-11_1437990829-310x551.png"><img src="../image/Screenshot_2015-07-27-12-27-11_1437990829-310x551.png"></a>
+		<a href="../image/Screenshot_2015-07-27-12-27-34_1437990867-310x551.png"><img src="../image/Screenshot_2015-07-27-12-27-34_1437990867-310x551.png"></a>
+		<p>Для доступа к этой функции тапните по нужной точке в Google Maps, а затем откройте карточку этого места. Здесь коснитесь кнопки меню (три точки сверху) и выберите пункт «Изменить название». На следующей странице введите новое имя выделенного места. В последующем вы сможете быстро найти все эти точки в разделе «Ваши места».	</p>
+		
+        <script type="text/javascript">(function() {
+          if (window.pluso)if (typeof window.pluso.start == "function") return;
+          if (window.ifpluso==undefined) { window.ifpluso = 1;
+            var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+            s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+            s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+            var h=d[g]('body')[0];
+            h.appendChild(s);
+          }})();</script>
+        <div class="pluso" data-background="transparent" data-options="medium,round,line,horizontal,nocounter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email,print">
+        </div>
+		
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_shortname = 'itsmytechblog';
+		(function() {
+			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+		
+	 </section>
+	  
+	 <div class="advertising">
+       <a href="http://www.microsoft.com/uk-ua/windows/windows-10-upgrade" target="_blank"><img src="../image/snow_mountains_windows_10-wide.jpg"></a>
+	   <a href="http://www.microsoft.com/uk-ua/windows/windows-10-upgrade" target="_blank"><img id="above" src="../image/Windows_10_Logo.svg.png"></a>
+     </div>
+    </div>
+	
+	<div id="up"><img src="../image/arrow-up-01-128.png"></div>
+	
+    <footer>
+	  <p>2015 Evgeniy Jugalskiy</p>
+	  <a href="mailto:evgeniy.jugalskiy@gmail.com">evgeniy.jugalskiy@gmail.com</a>
+      <div>
+        <p><a href="mailto:evgeniy.jugalskiy@gmail.com">Написать</a></p>
+      </div>
+    </footer>
+	<script src="../TechBlog.js"></script>
+  </body>
+</html>
