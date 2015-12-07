@@ -1,6 +1,6 @@
 <header>
-      <h1><a href="/index.php">Техно<span>Blog</span></a></h1>
-      <form id="search" method="get"> 
+      <h1><a href="../index.php">Техно<span>Blog</span></a></h1>
+      <form id="search" method="post"> 
         <input type="search" name="search">
         <input type="button" name="sick" value="Поиск">
       </form>
@@ -13,9 +13,9 @@
         <li><a href="#">Игры</a></li>
       </ul>
 	  
-	  <?php if(isset($_SESSION['check'])) {?>
+	  <?php if(!empty($_SESSION['login'])) {?>
 	  <form id="entry" method="post">
-			<?php echo "<h3 style='padding: 0; margin: 0; display:inline;'><strong>".$login."</strong></h3>";?>
+			<?php echo "<h3 style='padding: 0; margin: 0; display:inline;'><strong>".$_SESSION['login']."</strong></h3>";?>
 			<input id="loginBtn" style="float: right;" type="submit" name="exit" value="Выйти"> 
       </form>
 	  <?php } else {  ?>
@@ -32,7 +32,9 @@
         </div>
 	  <?php	}
 			if(isset($_POST['exit'])) {
-				unset($_POST['name']);
+				unset($_SESSION['login']);
+				#$file =  $_SERVER['PHP_SELF'];
+				header("Location: http://tblog.pp.ua");
 			}
 	  ?>
       </form>
@@ -41,7 +43,7 @@
 	  <div id="wrap" onclick="show('none')"></div>
 
 	  <div id="window">
-		    <img class="close" onclick="show('none')" src="../image/close.png" width="42px">
+		    <img class="close" onclick="show('none')" src="http://tblog.pp.ua/image/close.png" width="42px">
 			<h3>Регистрация</h3>
 			<div class="wrapper">
 				  
@@ -74,7 +76,7 @@
 			   </div>
 			   <div class="capcha">
 			   <p>Введите число с картинки</p>
-				   <label><img src="../image/capcha.png"></label>
+				   <label><img src="http://tblog.pp.ua/image/capcha.png"></label>
 				   <input type="number" name="capcha" pattern="55102" required><br>
 				 </div>
 			 </div>

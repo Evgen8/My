@@ -1,8 +1,4 @@
 <?php
-    define( "DB_DSN", "mysql:host=localhost;dbname=tblog; charset=utf8" );
-	define( "DB_USERNAME", "root" );
-	define( "DB_PASSWORD", "2012" );
-    
     if(isset($_POST['send'])) {
         if(isset($_POST['name']) && !empty($_POST['name'])) {
             $name = trim(strip_tags($_POST['name']));
@@ -21,7 +17,7 @@
     function registration( ) {
         global $name, $surname, $city, $mail, $password, $date;
         $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-        $write = "INSERT INTO user VALUES (null, :name, :surname, :city, :mail, :password, :date)";
+        $write = "INSERT INTO user VALUES (null, :name, :surname, :city, :mail, :password, :date, null)";
         $st = $conn->prepare( $write );
         $st->bindValue(':name', $name);
         $st->bindValue(':surname', $surname);
@@ -30,30 +26,30 @@
         $st->bindValue(':password', $password);
         $st->bindValue(':date', $date);
         $st->execute();
-        echo '<br>'.$write;
-        echo '<p>Было затронуто строк :'. $st->rowCount() .'</p>';
-        echo '<p>Последняя строка :'. $conn->lastInsertId() .'</p>';
     }
 	
-	if(isset($_POST['send'])) {
+    if(isset($_POST['send'])) {
         $message = "Вы успешно зарегистрировались на сайте tblog.pp.ua\r\nВаш логин: ".$name."\r\nВаш пароль: ".$password;
         $message = wordwrap($message, 70, "\r\n");
 
-        $headers = 'From: info@tblog.pp.ua' . "\r\n" .
-            'Reply-To: info@tblog.pp.ua' . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
+        $headers = "From: info@tblog.pp.ua\r\n"
+                ."Reply-To: info@tblog.pp.ua\r\n"
+                ."X-Mailer: PHP/" . phpversion();
 
-        $send_mail = mail($mail, 'Регистрация на tblog.pp.ua', $message, $headers);
-	}
+        if( mail($mail, 'Регистрация на tblog.pp.ua', $message, $headers)) {
+            echo 'send';
+        } 
+        else {
+            echo 'message error';
+        }
+    }
 					  
     if(!empty($name) && !empty($surname) && !empty($mail) && !empty($city) && !empty($password)) {
         if($password1 == $password) {
-			$password = md5($password);
+			$password = password_hash($password, PASSWORD_DEFAULT);
 			registration();
-			$send_mail;
-			session_start();
 			$_SESSION['mail'] = $mail;
-		    header("Location: registration.php");
+		    header("Location: http://tblog.pp.ua/article/registration.php");
         }
         else {
             echo "pass not match";

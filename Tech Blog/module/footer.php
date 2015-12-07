@@ -5,6 +5,6 @@
         <p><a href="mailto:evgeniy.jugalskiy@gmail.com">Написать</a></p>
       </div>
     </footer>
-	<script src="/TechBlog.js"></script>
+	<script src="TechBlog.js"></script>
   </body>
 </html>
