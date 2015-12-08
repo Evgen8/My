@@ -1,6 +1,4 @@
-﻿<?php
-$description = 'Windows 10';
-$keywords = 'Windows 10';
+<?php
 require "../module/config.php";
 require "../module/header.php";
 require "../module/login.php";
@@ -11,6 +9,7 @@ require "../module/form.php";
     <div class="center">
       <div class="title">
         <input id="back" type="button" onclick="history.back()" value="&larr; Вернуться">
+        <i style='float: ight;font-size: 18px; padding-left: 20px;padding-top: 8px; margin: 0;'><?php echo $date;?></i>
         <h2><?php h1();?></h2>
       </div>
       

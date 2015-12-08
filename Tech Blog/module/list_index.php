@@ -21,14 +21,13 @@
     }
 
     $start = $page*$max_posts-$max_posts;
-	$sql = $conn->query("SELECT * FROM article LIMIT $start, $max_posts");
+	$sql = $conn->query("SELECT * FROM article ORDER BY id DESC LIMIT $start, $max_posts");
 	while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
 		echo "<div>
-				<h2><a href=\"article/".$row['link'].".php?id=".$row['id']."\">".$row['title']."</a></h2>
-				<a href=\"article/".$row['link'].".php?id=".$row['id']."\">".$row['image']."</a>
+				<h2><a href='article/Article.php?id={$row['id']} '> {$row['title']} </a></h2>
+				<a href='article/Article.php?id={$row['id']} '> {$row['image']} </a>
 			 </div>";
 	}
-	$conn = null;
 	?>
 	<div id="more">
 		<ul>
