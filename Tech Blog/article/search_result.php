@@ -1,4 +1,5 @@
 <?php
+$title = "Результаты поиска";
 require "../module/config.php";
 require "../module/header.php";
 require "../module/login.php";

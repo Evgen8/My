@@ -1,21 +1,23 @@
 <header>
-      <h1><a href="../index.php">Техно<span>Blog</span></a></h1>
+      <h1><a href="http://tblog.pp.ua/index.php">Техно<span>Blog</span></a></h1>
       <form id="search" method="post"> 
         <input type="search" name="search">
-        <input type="button" name="sick" value="Поиск">
+        <input id="search_btn" type="submit" name="sick" value="Поиск">
+		<?php
+			if(isset($_POST['sick'])){
+				  $_SESSION['search'] = $_POST['search'];
+				  header("Location: http://tblog.pp.ua/article/search_result.php");
+				  exit;
+			}
+		?>
       </form>
       <ul>
-        <li><a href="#">Новости</a></li>
-        <li><a href="#">Обзоры</a></li>
-        <li><a href="#">Статьи</a></li>
-        <li><a href="#">Гаджеты</a></li>
-        <li><a href="#">Софт</a></li>
-        <li><a href="#">Игры</a></li>
-      </ul>
+		<?php include "category.php"?>
+	  </ul>
 	  
 	  <?php if(!empty($_SESSION['login'])) {?>
 	  <form id="entry" method="post">
-			<?php echo "<h3 style='padding: 0; margin: 0; display:inline;'><strong>".$_SESSION['login']."</strong></h3>";?>
+			<h3 style='padding: 0; margin: 0; display:inline;'><strong><?php echo $_SESSION['login'] ?></strong></h3>
 			<input id="loginBtn" style="float: right;" type="submit" name="exit" value="Выйти"> 
       </form>
 	  <?php } else {  ?>
@@ -30,14 +32,16 @@
           <input type="submit" name="submit" value="Войти"><br>
           <a id="aForgot" href="#">Забыли пароль?</a>
         </div>
+	  </form>
 	  <?php	}
 			if(isset($_POST['exit'])) {
 				unset($_SESSION['login']);
 				#$file =  $_SERVER['PHP_SELF'];
-				header("Location: http://tblog.pp.ua");
+				header("Location: http://tblog.pp.ua/");
+				exit;
 			}
 	  ?>
-      </form>
+     
 	  
 	  		<!-- Задний прозрачный фон-->
 	  <div id="wrap" onclick="show('none')"></div>
@@ -82,10 +86,7 @@
 			 </div>
 	   
 			 <input type="submit" id="submit" name="send" value="Готово"/>
-			 
 		    </form>
-			
 			</div><!-- end wrapper -->
 	  </div>
-	   
 </header>

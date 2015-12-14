@@ -11,5 +11,6 @@
             echo $row['content'];
         }
 		$conn = null;
+		
     }
     article();

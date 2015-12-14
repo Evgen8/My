@@ -1,23 +1,20 @@
 <?php
     if(isset($_POST['publish'])) {
-        $name = htmlspecialchars($_POST['name']);
-        $age = htmlspecialchars($_POST['age']);
-        if(empty($age)) {
-            $age = null;
-        };
-        $country = htmlspecialchars($_POST['country']);
-        $text = htmlspecialchars($_POST['message']);
+        $name = trim(htmlspecialchars($_POST['name']));
+        $text =trim(htmlspecialchars($_POST['message']));
+        $email = trim(htmlspecialchars($_POST['email']));
+        $article_id = $_GET['id'];
     }
     
     function insert() {
-        global $name, $age, $country, $text;
+        global $name, $text, $email, $article_id;
         $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-        $write = "INSERT INTO comment VALUES (null, :name, :age, :country, null, :text)";
+        $write = "INSERT INTO comment VALUES (null, :name, :text, :email, :article_id, null)";
         $st = $conn->prepare( $write );
         $st->bindValue(':name', $name);
-        $st->bindValue(':age', $age);
-        $st->bindValue(':country', $country);
         $st->bindValue(':text', $text);
+        $st->bindValue(':email', $email);
+        $st->bindValue(':article_id', $article_id);
         $st->execute();
         $conn = null;
     }
@@ -26,9 +23,13 @@
     }
     
     function select() {
+        $id = $_GET['id'];
         $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-        $sql = $conn->query("SELECT * FROM comment ORDER BY id DESC");
-        while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+        $sql = "SELECT * FROM comment WHERE article_id=:id ORDER BY id DESC";
+        $st = $conn->prepare( $sql );
+        $st->bindValue(':id', $id);
+        $st->execute(); 
+        while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
             echo '<h3 id=\'h3_name\'>'. $row['name'] .'</h3><p id=\'date\'>' .$row['date'].'</p><p id=\'p\'>'. $row['text'] .'</p>';
         $conn = null;
         }
@@ -37,11 +38,10 @@
     <hr>
     <h3>Комментарии</h3>
     <form action="" method="post">
-     <p>Ваше имя: <input type="text" name="name" required/></p>
-     <p>Ваш возраст: <input type="number" name="age" /></p>
-     <p>Ваша страна: <input type="text" name="country"/></p>
-     <textarea name="message" cols='40' rows='10' placeholder="Введите текст" required></textarea>
-     <p><input type="submit" name="publish" value="Отправить"/></p>
+        <p>Ваше имя: <input type="text" name="name" required/></p>
+        <p>Ваш e-mail: <input type="email" name="email"/></p>
+        <textarea name="message" cols='40' rows='10' placeholder="Введите текст" required></textarea>
+        <p><input type="submit" name="publish" value="Отправить"/></p>
     </form>
     <hr>
     <?php select(); ?>

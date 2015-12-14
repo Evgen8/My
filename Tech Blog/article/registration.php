@@ -1,5 +1,4 @@
 <?php
-session_start();
 $title = "Registration";
 require "../module/config.php";
 require "../module/header.php";

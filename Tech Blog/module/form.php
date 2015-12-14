@@ -1,4 +1,5 @@
 <?php
+
     if(isset($_POST['send'])) {
         if(isset($_POST['name']) && !empty($_POST['name'])) {
             $name = trim(strip_tags($_POST['name']));
@@ -26,23 +27,22 @@
         $st->bindValue(':password', $password);
         $st->bindValue(':date', $date);
         $st->execute();
+		$conn = null;
+        //echo '<br>'.$write;
+        //echo '<p>Было затронуто строк :'. $st->rowCount() .'</p>';
+        //echo '<p>Последняя строка :'. $conn->lastInsertId() .'</p>';
     }
 	
-    if(isset($_POST['send'])) {
-        $message = "Вы успешно зарегистрировались на сайте tblog.pp.ua\r\nВаш логин: ".$name."\r\nВаш пароль: ".$password;
-        $message = wordwrap($message, 70, "\r\n");
+	if(isset($_POST['send'])) {
+       $message = "Вы успешно зарегистрировались на сайте tblog.pp.ua\r\nВаш логин: ".$name."\r\nВаш пароль: ".$password;
+       $message = wordwrap($message, 70, "\r\n");
 
-        $headers = "From: info@tblog.pp.ua\r\n"
-                ."Reply-To: info@tblog.pp.ua\r\n"
-                ."X-Mailer: PHP/" . phpversion();
+       $headers = 'From: info@tblog.pp.ua' . "\r\n" .
+           'Reply-To: info@tblog.pp.ua' . "\r\n" .
+           'X-Mailer: PHP/' . phpversion();
 
-        if( mail($mail, 'Регистрация на tblog.pp.ua', $message, $headers)) {
-            echo 'send';
-        } 
-        else {
-            echo 'message error';
-        }
-    }
+		mail($mail, 'Регистрация на tblog.pp.ua', $message, $headers);
+	}
 					  
     if(!empty($name) && !empty($surname) && !empty($mail) && !empty($city) && !empty($password)) {
         if($password1 == $password) {
@@ -50,6 +50,7 @@
 			registration();
 			$_SESSION['mail'] = $mail;
 		    header("Location: http://tblog.pp.ua/article/registration.php");
+			exit;
         }
         else {
             echo "pass not match";
